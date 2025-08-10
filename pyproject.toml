@@ -1,0 +1,29 @@
+[project]
+name = "gobra"
+version = "0.1.0"
+description = "A simple go client in python."
+authors = [
+    {name = "Matthew McRobie",email = "avalanchian@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pygame-ce (>=2.5.5,<3.0.0)"
+]
+
+[tool.poetry]
+
+
+[tool.isort]
+profile = "black"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.1"
+coverage = "^7.10.2"
+pytest-cov = "^6.2.1"
+black = "^25.1.0"
+isort = "^6.0.1"
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
