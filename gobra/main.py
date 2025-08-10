@@ -20,15 +20,24 @@ def main():
     board = pygame.Surface((720, 720))
     board.fill("brown")
 
-    points = [i for i in range(40, 720, 80)]
+    points = [i for i in range(39, 720, 80)]
     line_length = points[-1] - points[0]
-    h_lines = [pygame.Rect(points[0], y, line_length, 1) for y in points]
-    v_lines = [pygame.Rect(x, points[0], 1, line_length) for x in points]
+    h_lines = [pygame.Rect(points[0], y, line_length, 3) for y in points]
+    v_lines = [pygame.Rect(x, points[0], 3, line_length) for x in points]
+    star_points = [
+        (points[2] + 1, points[2] + 1),
+        (points[2] + 1, points[-3] + 1),
+        (points[-3] + 1, points[2] + 1),
+        (points[-3] + 1, points[-3] + 1),
+        (points[4] + 1, points[4] + 1),
+    ]
 
     for line in h_lines:
         _ = pygame.draw.rect(board, "black", line)
     for line in v_lines:
         _ = pygame.draw.rect(board, "black", line)
+    for point in star_points:
+        pygame.draw.circle(board, "black", point, 6)
 
     while running:
         # Input event handling
