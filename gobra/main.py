@@ -26,7 +26,7 @@ def main():
 
     # Make board (9x9)
     board = pygame.Surface((720, 720))
-    board.fill("brown")
+    board.fill(pygame.Color("#d65d0e"))
 
     # Create lines spaced 80 px apart
     points = [i for i in range(39, 720, c["GRID_SPACING"])]
@@ -44,11 +44,11 @@ def main():
 
     # Draw lines and star points on board
     for line in h_lines:
-        _ = pygame.draw.rect(board, "black", line)
+        _ = pygame.draw.rect(board, pygame.Color("#1d2021"), line)
     for line in v_lines:
-        _ = pygame.draw.rect(board, "black", line)
+        _ = pygame.draw.rect(board, pygame.Color("#1d2021"), line)
     for point in star_points:
-        pygame.draw.circle(board, "black", point, 6)
+        pygame.draw.circle(board, pygame.Color("#1d2021"), point, 6)
 
     # Primary game loop
     while running:
@@ -69,14 +69,14 @@ def main():
             if 0 <= board_x < 9 and 0 <= board_y < 9:
                 point = (points[board_x] + 1, points[board_y] + 1)
                 if black_to_play:
-                    pygame.draw.circle(board, "black", point, 35)
+                    pygame.draw.circle(board, pygame.Color("#282828"), point, 35)
                     black_to_play = False
                 else:
-                    pygame.draw.circle(board, "white", point, 35)
+                    pygame.draw.circle(board, pygame.Color("#ebdbb2"), point, 35)
                     black_to_play = True
 
         # Update display
-        screen.fill("purple")
+        screen.fill(pygame.Color("#928374"))
         screen.blit(board, dest=(280, 152))
         pygame.display.flip()
 
