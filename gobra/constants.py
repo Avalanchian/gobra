@@ -1,0 +1,9 @@
+class Constant:
+    SCR_WIDTH = 1280
+    SCR_HEIGHT = 1024
+    SCR_DIMS = (1280, 1024)
+    FPS = 60
+    BOARD_OFFSET_X = 280
+    BOARD_OFFSET_Y = 152
+    GRID_SPACING = 80
+    GRID_OFFSET = 40
